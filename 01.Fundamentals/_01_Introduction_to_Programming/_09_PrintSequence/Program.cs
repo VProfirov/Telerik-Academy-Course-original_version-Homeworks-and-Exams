@@ -14,6 +14,7 @@ namespace _09_PrintSequence
            var loopUpperLimit = sequenceSize + sequenceStart;
            for (int i = sequenceStart; i < loopUpperLimit; i++)
            {
+               // Using bitwise check for even: (i & 1) != 0
                if (i % 2 == 0)
                {
                    sb.AppendLine((i.ToString()));
