@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_01_OddOrEven", "_01_OddOrEven\_01_OddOrEven.csproj", "{4057C667-ECD1-4999-B4EF-6D95A819732E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02_MoonGravity", "_02_MoonGravity\_02_MoonGravity.csproj", "{835DF7EC-070C-4C50-8DFB-95C26F92B399}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{4057C667-ECD1-4999-B4EF-6D95A819732E}.Release|x64.Build.0 = Release|Any CPU
 		{4057C667-ECD1-4999-B4EF-6D95A819732E}.Release|x86.ActiveCfg = Release|Any CPU
 		{4057C667-ECD1-4999-B4EF-6D95A819732E}.Release|x86.Build.0 = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|x64.Build.0 = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Debug|x86.Build.0 = Debug|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|x64.ActiveCfg = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|x64.Build.0 = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|x86.ActiveCfg = Release|Any CPU
+		{835DF7EC-070C-4C50-8DFB-95C26F92B399}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

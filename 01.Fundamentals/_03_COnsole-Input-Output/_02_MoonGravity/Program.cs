@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace _01_OddOrEven
+namespace _02_MoonGravity
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! .net5.0 and C# 9! Version 0.2");
+            Console.WriteLine("MOON GRAVITY VERSION 0.2 !");
         }
     }
 }
