@@ -1,3 +1,4 @@
+## louncher.json (?)
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -8,7 +9,9 @@
         "name": ".NET Core Launch (console)",
         "type": "coreclr",
         "request": "launch",
-        "program": "${workspaceFolder}/bin/Debug/net5.0/_14_PrintASCIITable.dll",
+        //"program": "${fileDirname}/bin/Debug/net5.0/",
+        //"program": "${file}",
+        "program": "${workspaceFolder}/bin/Debug/<insert-target-framework-here>/<insert-project-name-here>.dll",
         "args": [],
         "cwd": "${workspaceFolder}",
         "stopAtEntry": false,
