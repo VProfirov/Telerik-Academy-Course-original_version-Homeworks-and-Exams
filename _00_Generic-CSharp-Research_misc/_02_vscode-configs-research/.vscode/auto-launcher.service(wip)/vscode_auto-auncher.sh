@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-PROJECT_LOCATION=$(PWD)
 
 # PSEUDO CODE SOLUTION
 #cd $PROJECT_LOCATION; cd ../;
