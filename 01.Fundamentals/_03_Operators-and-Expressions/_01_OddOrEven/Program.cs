@@ -6,7 +6,7 @@ namespace _01_OddOrEven
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World! Intersting!");
         }
     }
 }
