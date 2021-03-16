@@ -5,10 +5,44 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "_11_BankAccountData .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/_11_BankAccountData/bin/Debug/net5.0/_11_BankAccountData.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "_12_NullValuesArithemetic .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/_12_NullValuesArithmetic/bin/Debug/net5.0/_12_NullValuesArithmetic.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "_13_ComparingFloats .NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/_13_ComparingFloats/bin/Debug/net5.0/_13_ComparingFloats.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/_13_ComparingFloats",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
             "OS-COMMENT1": "Use IntelliSense to find out which attributes exist for C# debugging",
             "OS-COMMENT2": "Use hover for the description of the existing attributes",
             "OS-COMMENT3": "For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md",
-            "name": ".NET Core Launch (console)",
+            "name": "_14_PrintASCIITable .NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
