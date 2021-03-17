@@ -6,10 +6,15 @@ namespace _01_OddOrEven
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"Hello FUCKING World!");
+            Console.WriteLine($"Your Name is ?");
+            var name = Console.ReadLine();
+            Console.WriteLine($"Hello {name}! Nice to meet you {name}");
+            
             TheShortAndLazyWay();
         }
 
-        public static void TheProgramaticWay()
+        static void TheProgramaticWay()
         {
 
             Console.WriteLine($"Enter the number you want to check if its ODD or EVEN: ");
@@ -22,7 +27,7 @@ namespace _01_OddOrEven
             // TODO: Validation confirmation and msg_out -> do it parallel in .py; .js; .go
         }
 
-        public static void TheShortAndLazyWay()
+        static void TheShortAndLazyWay()
         {
             Console.WriteLine($"Insert number to be checked if it is ODD or Even");
             // var userInput_Number;
