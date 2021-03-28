@@ -20,7 +20,6 @@ namespace _01_OddOrEven
             var isOdd = (numberUserInput & 1) == 1;
             var result = (isValidUserInput) ? $"The User's number ({numberUserInput}) is {(isOdd ? "ODD" : "EVEN")}" : $"{logUserInputVerificationStatus}";
             Console.WriteLine(result);
-            // TODO: Validation confirmation and msg_out -> do it parallel in .py; .js; .go
         }
 
         static void OddOrEven_HowNotToDoIt()
@@ -43,8 +42,8 @@ namespace _01_OddOrEven
             var stdout = (isValidUserInput)
                 ? $"The user's number({numberUserInput}) is {(isOdd? "ODD" : "EVEN")}"
                 : $"Wrong user input! Check the logs!";
-            
             Console.WriteLine(stdout);
+
             if (!isValidUserInput)
             {
                 Console.WriteLine($"---LOG---\r\n{logUserInput}\r\n---END-LOG---");
