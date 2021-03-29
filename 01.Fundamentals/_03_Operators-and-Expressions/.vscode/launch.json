@@ -16,8 +16,11 @@
             "program": "${workspaceFolder}/_01_OddOrEven/bin/Debug/net5.0/_01_OddOrEven.dll",
             "args": [],
             "cwd": "${workspaceFolder}/_01_OddOrEven",
+            // TODO: Pay attention to these "OS-COMMENT"s because they are IMPORTANT!
             "OS-COMMENT5": "For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console",
-            "console": "internalConsole",
+            // "console": "internalConsole", //debugger's terminal (default option when the launch.json is created) NOTE:
+            "console": "integratedTerminal", // the TERMINAL sub-window (the terminal in vscode)
+            // "console": "externalTerminal", // external terminal specified in the settings.json ==> terminator IT NEEDS SOME OPTIONS NOTE: I have not made this work yet (user integratedTerminal option)
             "stopAtEntry": false
         },
         {
