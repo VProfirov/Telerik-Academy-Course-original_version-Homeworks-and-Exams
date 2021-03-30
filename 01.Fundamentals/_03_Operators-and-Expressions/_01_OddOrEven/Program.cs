@@ -16,7 +16,7 @@ namespace _01_OddOrEven
             Console.WriteLine($"Enter the number you want to check if its ODD or EVEN: ");
             var userInput = Console.ReadLine();
             var isValidUserInput = int.TryParse(userInput, out int numberUserInput);
-            var logUserInputVerificationStatus = (isValidUserInput)? "VALID int type castable input!" : $"INVALID Input ({userInput}). Unable to cast to int.";
+            var logUserInputVerificationStatus = isValidUserInput ? "VALID int type castable input!" : $"INVALID Input ({userInput}). Unable to cast to int.";
             var isOdd = (numberUserInput & 1) == 1;
             var result = (isValidUserInput) ? $"The User's number ({numberUserInput}) is {(isOdd ? "ODD" : "EVEN")}" : $"{logUserInputVerificationStatus}";
             Console.WriteLine(result);
