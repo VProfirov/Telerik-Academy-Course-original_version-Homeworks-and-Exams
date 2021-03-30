@@ -20,22 +20,32 @@ namespace _04_Rectangles
             var userInput_height = Console.ReadLine();
 
             var sb_log = new StringBuilder();
-            var isValidInput = double.TryParse(userInput_width, out double width);
-            var logValidityOfUserInput_width = isValidInput ? $"The user's input about width({width}) is valid" : $"User's input about width ({userInput_width} is invalid! Use double, int,etc...";
+            var isValidInput_width = double.TryParse(userInput_width, out double width);
+            var logValidityOfUserInput_width = isValidInput_width ? $"The user's input about width({width}) is valid!" : $"User's input about width({userInput_width}) is invalid! Use double, int,etc...";
             sb_log.AppendLine(logValidityOfUserInput_width);
-            isValidInput = double.TryParse(userInput_height, out double height);
-            var logValidityOfUserInput_height = isValidInput ? $"The user's input about height({height}) is valid" : $"User's input about width ({userInput_height} is invalid! Use double, int,etc...";
+            var isValidInput_height = double.TryParse(userInput_height, out double height);
+            var logValidityOfUserInput_height = isValidInput_height ? $"The user's input about height({height}) is valid!" : $"User's input about height({userInput_height}) is invalid! Use double, int,etc...";
             sb_log.AppendLine(logValidityOfUserInput_height);
+            var log = sb_log.ToString();
+            var isValidInput = isValidInput_width && isValidInput_height;
 
-            static void ValidityCheck(bool isValidInput)
+            #region interactivity
+            // NOTE: This is kind of overdoing it, but it shows inner-functionality encapsulation, fallowed by condition bringing interactivity!
+            static void ValidityCheck(bool isValidInput,string log)
             {
                 if (!isValidInput)
                 {
+                    Console.WriteLine($"---LOG---\r\n{log}\r\n---------");
                     Console.WriteLine($"You entered invalid input! Try again");
-                    Main();
                 }
             }
-            ValidityCheck(isValidInput);
+            if(!isValidInput)
+            {
+                ValidityCheck(isValidInput, log);
+                Main();
+                return;
+            }
+            #endregion
 
             var rectangle = new Rectangle(width, height);
             var rectangleArea = rectangle.CalculateArea();
