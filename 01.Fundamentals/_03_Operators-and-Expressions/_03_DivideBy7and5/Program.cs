@@ -16,7 +16,7 @@ namespace _03_DivideBy7and5
             var userInput = Console.ReadLine();
             var isValidInput = int.TryParse(userInput, out int number);
             var logValidityOfUserInput = isValidInput ? $"Valid user input as number : {number}" : "Invalid user input! Can't be parsed as integer number.";
-            var isDivisibleBy5and7 = isValidInput ? CheckDivisibilityBy5and7(number) : false;
+            var isDivisibleBy5and7 = isValidInput && CheckDivisibilityBy5and7(number);
             Console.WriteLine(isValidInput ? $" Is the number({number}) divisible by 5 and 7 ==> {isDivisibleBy5and7}" : logValidityOfUserInput);
         }
 

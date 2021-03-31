@@ -13,6 +13,7 @@ namespace _04_Rectangles
 
         static void Rectangles_Solution()
         {
+            //KISS Principle is completely disregarded for the task
             Console.WriteLine($"Enter the HEIGHT and WIDTH of your RECTANGLE to calculate its AREA and PERIMETER: ");
             Console.Write($"WIDTH: ");
             var userInput_width = Console.ReadLine();
