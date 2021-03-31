@@ -7,10 +7,10 @@ namespace _03_DivideBy7and5
     {
         static void Main(string[] args)
         {
-            Solution_DivisibilityBy5and7();
+            DivisibilityBy5and7_Solution();
         }
 
-        static void Solution_DivisibilityBy5and7()
+        static void DivisibilityBy5and7_Solution()
         {
             Console.WriteLine($"Enter integer number to be checked for possible divison of 7 and 5 without remainder: ");
             var userInput = Console.ReadLine();
