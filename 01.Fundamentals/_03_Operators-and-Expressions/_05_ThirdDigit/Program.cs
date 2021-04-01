@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace _05_ThirdDigit
 {
@@ -15,17 +16,23 @@ namespace _05_ThirdDigit
             var userInput = Console.ReadLine();
             var isValidInput = uint.TryParse(userInput, out uint number);
             var logValidityOfUserInput = isValidInput ? $"Valid user input as number : {number}" : "Invalid user input! Can't be parsed as integer number.";
+            if (!isValidInput) //not
+            {
+                Console.WriteLine($"{logValidityOfUserInput}");
+                return;
+            }
 
-            Console.WriteLine($"is3rd7 as STRING: {is3rdDigit7_StringCheck(number)}");
-            Console.WriteLine($"is3rd7 as NUMBER: {is3rdDigit7_NumericCheck(number)}");
+            // Console.WriteLine($"is3rd7 as STRING: {is3rdDigit7_StringCheck(number)}");
+            // Console.WriteLine($"is3rd7 as NUMBER: {is3rdDigit7_NumericCheck(number)}");
             var is3rd7_AsString = is3rdDigit7_StringCheck(number);
             var is3rd7_AsNumeric = is3rdDigit7_NumericCheck(number);
-
-            Console.WriteLine($"{is3rd7_AsString.Item1 ? is3rd7_AsString.Item1.ToString() : is3rd7_AsString}");
-            Console.WriteLine($"{is3rd7_AsNumeric.Item1 ? is3rd7_AsNumeric.Item1.ToString() : is3rd7_AsNumeric}");
+            var is3rd7_AsString_result = $"{(is3rd7_AsString.is3rd7 ? is3rd7_AsString.is3rd7 : $"{is3rd7_AsString.is3rd7} {is3rd7_AsString.digit}")}".ToLower(CultureInfo.InvariantCulture);
+            var is3rd7_AsNumeric_result = $"{(is3rd7_AsNumeric.is3rd7 ? is3rd7_AsNumeric.is3rd7 : $"{is3rd7_AsNumeric.is3rd7} {is3rd7_AsNumeric.digit}")}".ToLower(CultureInfo.InvariantCulture);
+            Console.WriteLine($"{is3rd7_AsString_result}");
+            Console.WriteLine($"{is3rd7_AsNumeric_result}");
         }
 
-        static (bool,string) is3rdDigit7_StringCheck(uint number)
+        static (bool is3rd7, string digit) is3rdDigit7_StringCheck(uint number)
         {
             var numberAsString = number.ToString();
             var len = numberAsString.Length;
@@ -35,7 +42,7 @@ namespace _05_ThirdDigit
             return (is3rdDigit7, digitAsString);
         }
 
-        static (bool, uint) is3rdDigit7_NumericCheck(uint number)
+        static (bool is3rd7, uint digit) is3rdDigit7_NumericCheck(uint number)
         {
             var digit = 0U;
             var is3rdDigit7 = false;
