@@ -42,6 +42,13 @@ namespace _04_Rectangles
             }
             if(!isValidInput)
             {
+                // NOTE: This is another example of HOW NOT TO DO something.
+                // Here we create recursive call into the Main() method and with each call we instantiate new variables and save space for them in the RAM!
+                // Meanwhile, the old variables and their data are kept in the RAM! Even, if we meant to make a retry of the task, we are not reseting the task itself!
+                // NOTE: How it could have been done:
+                // 1. We could initialize/start another/new instance of the exact same application and close the current one. (This is the preferred way for larger and more complex applications)
+                // 2. User the "goto" flow-control keyword with a label (like: goto Begining) and place the label at the start of the block code of the method Rectangles_Solution()
+                // 3. There are other ways ;) And they mostly depend on the resources the application handles.
                 ValidityCheck(isValidInput, log);
                 Main();
                 return;
