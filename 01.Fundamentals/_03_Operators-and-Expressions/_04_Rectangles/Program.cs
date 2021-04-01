@@ -32,7 +32,7 @@ namespace _04_Rectangles
 
             #region interactivity
             // NOTE: This is kind of overdoing it, but it shows inner-functionality encapsulation, fallowed by condition bringing interactivity!
-            static void ValidityCheck(bool isValidInput,string log)
+            static void ValidityCheck(bool isValidInput, string log)
             {
                 if (!isValidInput)
                 {
@@ -40,7 +40,7 @@ namespace _04_Rectangles
                     Console.WriteLine($"You entered invalid input! Try again");
                 }
             }
-            if(!isValidInput)
+            if (!isValidInput)
             {
                 // NOTE: This is another example of HOW NOT TO DO something.
                 // Here we create recursive call into the Main() method and with each call we instantiate new variables and save space for them in the RAM!
