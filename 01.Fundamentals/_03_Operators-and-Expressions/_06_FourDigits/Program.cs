@@ -77,3 +77,5 @@ namespace _06_FourDigits
             Console.WriteLine($"SUM: {sum}");
         }
         #endregion
+    }
+}
