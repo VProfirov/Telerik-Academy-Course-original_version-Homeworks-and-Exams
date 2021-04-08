@@ -12,7 +12,7 @@ namespace _03_DivideBy7and5
 
         static void DivisibilityBy5and7_Solution()
         {
-            Console.WriteLine($"Enter integer number to be checked for possible divison of 7 and 5 without remainder: ");
+            Console.WriteLine($"Enter integer number to be checked for possible division of 7 and 5 without remainder: ");
             var userInput = Console.ReadLine();
             var isValidInput = int.TryParse(userInput, out int number);
             var logValidityOfUserInput = isValidInput ? $"Valid user input as number : {number}" : "Invalid user input! Can't be parsed as integer number.";
