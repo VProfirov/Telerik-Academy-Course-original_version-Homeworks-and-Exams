@@ -11,8 +11,8 @@ namespace _08_PrimeCheck
             // 1. Negative ints
             // 2. 0
             // 3. 1
-            // PrimeCheck_Solution();
-            PrimeChecK_Extended_Check();
+            PrimeCheck_Solution();
+            // PrimeCheck_Extended_Check();
         }
 
         static void PrimeCheck_Solution()
@@ -26,6 +26,8 @@ namespace _08_PrimeCheck
 
         static bool IsPrimeCheck(int number)
         {
+            // TODO: fix the bug with the SQRT!
+            // NOTE:  Use "PrimeCheck_Extended_Check()" method
             if (number < 2) return false;
             if (number == 2) return true;
             for (int i = 2; i < (int)Math.Sqrt(number); ++i)
@@ -35,7 +37,7 @@ namespace _08_PrimeCheck
             return true;
         }
 
-        static void PrimeChecK_Extended_Check()
+        static void PrimeCheck_Extended_Check()
         {
             var primeNumbersAsText = File.ReadAllText("../../../PrimeList.txt");
             var primesAsStringArray = primeNumbersAsText.Trim().Split(new char[] { ' ', ',','\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
