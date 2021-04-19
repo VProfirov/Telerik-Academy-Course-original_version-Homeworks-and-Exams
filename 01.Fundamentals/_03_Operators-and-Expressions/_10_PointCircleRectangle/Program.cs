@@ -6,33 +6,45 @@ namespace _10_PointCircleRectangle
     {
         static void Main(string[] args)
         {
-            // INSIDE Circle && OUTSIDE Rectangle!!
+            // Point INSIDE Circle && OUTSIDE Rectangle check!
+            PointCircleRectangle_Solution();
         }
 
         static void PointCircleRectangle_Solution()
         {
             Console.WriteLine("Enter the coordinates x-y for the point:");
             Console.Write("X: ");
-            var isValidInputX = int.TryParse(Console.ReadLine(), out int pointX);
+            var isValidInputX = double.TryParse(Console.ReadLine(), out double pointX);
             Console.Write("Y: ");
-            var isValidInputY = int.TryParse(Console.ReadLine(), out int pointY);
+            var isValidInputY = double.TryParse(Console.ReadLine(), out double pointY);
 
             var point = new Point(pointX, pointY);
             var circle = new Circle();
+            var rectangle = new Rectangle();
+
+            Console.WriteLine($"{(point.CheckInsideCircle(circle) ? "inside" : "outside")} circle {(point.CheckOutsideRectangle(rectangle) ? "outside" : "inside")} rectangle");
+
+            // Testing work with Tuples :=> don't use!
+            // var isInsideCircleOutsideRectangle = (insideCircle: point.CheckInsideCircle(circle), outsideRectangle: point.CheckOutsideRectangle(rectangle));
+            // Console.WriteLine($"{(isInsideCircleOutsideRectangle.insideCircle ? "inside" : "outside")} circle {(isInsideCircleOutsideRectangle.outsideRectangle ? "outside" : "inside")} rectangle");
         }
 
         class Point
         {
-            public Point(int x, int y)
+            public Point(double x, double y)
             {
                 this.X = x;
                 this.Y = y;
             }
-            public int X { get; set; }
-            public int Y { get; set; }
+            public double X { get; set; }
+            public double Y { get; set; }
             public bool CheckInsideCircle(Circle circle)
             {
                 return Math.Pow((X - circle.X), 2) + Math.Pow((Y - circle.Y), 2) <= Math.Pow(circle.Radius, 2);
+            }
+            public bool CheckOutsideRectangle(Rectangle rectangle)
+            {
+                return !(rectangle.TopSide >= Y && rectangle.LeftSide >= X && rectangle.BottomSide <= Y && rectangle.RightSide <= X);
             }
             public double FindDistanceToCenter()
             {
@@ -42,7 +54,7 @@ namespace _10_PointCircleRectangle
         }
         class Circle
         {
-            public Circle(int x = 1, int y = 1, double radius = 1.5)
+            public Circle(double x = 1, double y = 1, double radius = 1.5)
             {
                 this.X = x;
                 this.Y = y;
@@ -50,13 +62,13 @@ namespace _10_PointCircleRectangle
             }
 
             public double Radius { get; set; }
-            public int X { get; set; }
-            public int Y { get; set; }
+            public double X { get; set; }
+            public double Y { get; set; }
         }
 
         class Rectangle
         {
-            public Rectangle(int x = -1, int y = 1, int width = 6, int height = 2)
+            public Rectangle(double x = -1, double y = 1, double width = 6, double height = 2)
             {
                 this.X = x;
                 this.Y = y;
@@ -64,10 +76,17 @@ namespace _10_PointCircleRectangle
                 this.Height = height;
             }
 
-            public int X { get; set; }
-            public int Y { get; set; }
-            public int Width { get; set; }
-            public int Height { get; set; }
+            // X & Y are the coordinates for the top-left corner
+            public double X { get; set; }
+            public double Y { get; set; }
+            public double Width { get; set; }
+            public double Height { get; set; }
+            // Horizontal limits
+            public double LeftSide { get { return this.X; } }
+            public double RightSide { get { return this.X + this.Width; } }
+            // Vertical limits
+            public double TopSide { get { return this.Y; } }
+            public double BottomSide { get { return this.Y - this.Height; } }
         }
     }
 }
