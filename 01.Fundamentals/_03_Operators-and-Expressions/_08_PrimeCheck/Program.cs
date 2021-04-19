@@ -12,7 +12,10 @@ namespace _08_PrimeCheck
             // 2. 0
             // 3. 1
             PrimeCheck_Solution();
+
+#if DEBUG
             PrimeCheck_Extended_Check();
+#endif
         }
 
         static void PrimeCheck_Solution()
@@ -47,7 +50,7 @@ namespace _08_PrimeCheck
             Console.WriteLine($"-----EXTENDED-PRIME-TESTING-------");
 
             var primeNumbersAsText = File.ReadAllText("../../../PrimeList.txt");
-            var primesAsStringArray = primeNumbersAsText.Trim().Split(new char[] { ' ', ',','\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var primesAsStringArray = primeNumbersAsText.Trim().Split(new char[] { ' ', ',', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var primesAsInt32Array = Array.ConvertAll<string, int>(primesAsStringArray, new Converter<string, int>(x => Convert.ToInt32(x, 10)));
             // Array.ForEach(primesAsInt32Array, Console.WriteLine);
             // Array.ForEach(primesAsStringArray, Console.WriteLine);
@@ -55,11 +58,11 @@ namespace _08_PrimeCheck
             // Array.ForEach(primesAsInt32Array, x => Console.WriteLine($"{x} : {IsPrimeCheck(x)}"));
 
             var numbersCheckIfPrimesAsText = File.ReadAllText("../../../PrimeCheckList.txt"); // 1-50 check for primes
-            var numbersCheckIfPrimeAsStringArray = numbersCheckIfPrimesAsText.Trim().Split(new char[] { ' ', ',','\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            var numbersCheckIfPrimeAsInt32Array = Array.ConvertAll<string, int>(numbersCheckIfPrimeAsStringArray , new Converter<string, int>(x => Convert.ToInt32(x, 10)));
+            var numbersCheckIfPrimeAsStringArray = numbersCheckIfPrimesAsText.Trim().Split(new char[] { ' ', ',', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var numbersCheckIfPrimeAsInt32Array = Array.ConvertAll<string, int>(numbersCheckIfPrimeAsStringArray, new Converter<string, int>(x => Convert.ToInt32(x, 10)));
 
             var primeIndex = 0;
-            for(int i = 0; i < numbersCheckIfPrimeAsInt32Array.Length; ++i)
+            for (int i = 0; i < numbersCheckIfPrimeAsInt32Array.Length; ++i)
             {
                 var isPrime = IsPrimeCheck(numbersCheckIfPrimeAsInt32Array[i]);
                 Console.WriteLine($"{numbersCheckIfPrimeAsInt32Array[i]} : {isPrime} -> { (isPrime ? primesAsInt32Array[primeIndex++] : "")}");
