@@ -44,6 +44,20 @@ namespace _08_PrimeCheck
             return true;
         }
 
+// NOTE: more examples at : https://www.geeksforgeeks.org/mathematical-algorithms/mathematical-algorithms-prime-numbers-primality-tests/
+        static bool IsPrimeCheck_OptimizedWith_SchoolMethod(int number)
+        {
+            if (number.Equals(2) || number.Equals(3)) { return true; }
+            else if ((number <= 1) || (number % 2).Equals(0) || (number % 3).Equals(0)) { return false; }
+
+            var index = 5;
+            while (Math.Pow(index, 2) <= number)
+            {
+                if ((number % index).Equals(0) || (number % (index + 2)).Equals(0)) { return false; }
+                index += 6;
+            }
+            return true;
+        }
         static void PrimeCheck_Extended_Check()
         {
             // Testing a concept:
