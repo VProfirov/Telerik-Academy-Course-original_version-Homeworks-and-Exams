@@ -12,7 +12,7 @@ namespace _08_PrimeCheck
             // 2. 0
             // 3. 1
             PrimeCheck_Solution();
-            // PrimeCheck_Extended_Check();
+            PrimeCheck_Extended_Check();
         }
 
         static void PrimeCheck_Solution()
@@ -26,12 +26,16 @@ namespace _08_PrimeCheck
 
         static bool IsPrimeCheck(int number)
         {
-            // TODO: fix the bug with the SQRT!
-            // NOTE:  Use "PrimeCheck_Extended_Check()" method
+            // NOTE:  Two main approaches to this:
+            // NOTE:  use 1/2 on the number's size for the divider's upper limit or
+            // NOTE:  Sqrt of the Number as upper bound to check
+            // NOTE:  SQRT is optimal as does less steps => for number=8 (divider-steps = 3 {2,3,4}) vs (sqrt-steps = 2 {2,3})
             if (number < 2) return false;
             if (number == 2) return true;
-            for (int i = 2; i < (int)Math.Sqrt(number); ++i)
+            for (int i = 2; i <= (int)Math.Sqrt(number); ++i)
             {
+                // NOTE: Condition: The number has to divide only to 1 and itself => there has to be always a reminder to be Prime
+                // NOTE: (unless divides to itself)
                 if (number % i == 0) return false;
             }
             return true;
@@ -39,6 +43,9 @@ namespace _08_PrimeCheck
 
         static void PrimeCheck_Extended_Check()
         {
+            // Testing a concept:
+            Console.WriteLine($"-----EXTENDED-PRIME-TESTING-------");
+
             var primeNumbersAsText = File.ReadAllText("../../../PrimeList.txt");
             var primesAsStringArray = primeNumbersAsText.Trim().Split(new char[] { ' ', ',','\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var primesAsInt32Array = Array.ConvertAll<string, int>(primesAsStringArray, new Converter<string, int>(x => Convert.ToInt32(x, 10)));
