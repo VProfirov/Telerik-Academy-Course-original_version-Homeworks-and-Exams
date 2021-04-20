@@ -12,7 +12,7 @@ namespace _10_PointCircleRectangle
 
         static void PointCircleRectangle_Solution()
         {
-            Console.WriteLine("Enter the coordinates x-y for the point:");
+            Console.WriteLine("Enter the coordinates X and Y for the point:");
             Console.Write("X: ");
             var isValidInputX = double.TryParse(Console.ReadLine(), out double pointX);
             Console.Write("Y: ");
@@ -44,7 +44,8 @@ namespace _10_PointCircleRectangle
             }
             public bool CheckOutsideRectangle(Rectangle rectangle)
             {
-                return !(rectangle.TopSide >= Y && rectangle.LeftSide >= X && rectangle.BottomSide <= Y && rectangle.RightSide <= X);
+                // Reversing an inside check
+                return !(rectangle.TopSide >= Y && rectangle.LeftSide <= X && rectangle.BottomSide <= Y && rectangle.RightSide >= X);
             }
             public double FindDistanceToCenter()
             {
