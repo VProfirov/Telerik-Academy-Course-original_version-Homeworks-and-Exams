@@ -6,10 +6,17 @@ namespace _11_3rdBit
     {
         static void Main(string[] args)
         {
-            Check3rdBit_Solution();
+            Check3rdBit_Extended_Solution();
+            Check3rdBit_OneLiner_Solution();
         }
 
-        private static void Check3rdBit_Solution()
+        static void Check3rdBit_OneLiner_Solution()
+        {
+            Console.WriteLine((int.Parse(Console.ReadLine()) >> 3) & 1);
+        }
+
+        // NOTE: This section works around using programmable regions to serve different function dependent on the environment (Debug; Release)
+        private static void Check3rdBit_Extended_Solution()
         {
             Console.Write($"Enter nummber whose 3rd index bit be checked: ");
             var isValidInput = int.TryParse(Console.ReadLine(), out int number);
@@ -42,7 +49,28 @@ namespace _11_3rdBit
             int pos = 31;
             int i = 0;
 
-            while (i < 32)
+            while (i < 32  Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Enter position: ");
+            int position = int.Parse(Console.ReadLine());
+            Console.Write("Enter value: ");
+            int value = int.Parse(Console.ReadLine());
+
+            if (((number >> position) & 1) != value) number = ChangeBit(number, position);
+
+            Console.Clear();
+            Console.WriteLine("Result: " + number);
+
+            //while (true)
+            //{
+            //    Main(new string[]{});
+            //}
+        }
+
+        private static int ChangeBit(int number, int position)
+        {
+            return number ^ (1 << position);
+        })
             {
                 if ((number & (1 << i)) != 0)
                 {
