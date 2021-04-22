@@ -49,28 +49,7 @@ namespace _11_3rdBit
             int pos = 31;
             int i = 0;
 
-            while (i < 32  Console.Write("Enter a number: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.Write("Enter position: ");
-            int position = int.Parse(Console.ReadLine());
-            Console.Write("Enter value: ");
-            int value = int.Parse(Console.ReadLine());
-
-            if (((number >> position) & 1) != value) number = ChangeBit(number, position);
-
-            Console.Clear();
-            Console.WriteLine("Result: " + number);
-
-            //while (true)
-            //{
-            //    Main(new string[]{});
-            //}
-        }
-
-        private static int ChangeBit(int number, int position)
-        {
-            return number ^ (1 << position);
-        })
+            while (i < 32  )
             {
                 if ((number & (1 << i)) != 0)
                 {
