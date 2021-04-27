@@ -22,23 +22,25 @@ namespace _14_BitExchange
 
         static uint ExchangeBits(uint number)
         {
-            uint bitCome01 = 3;
+            uint bitComb01 = 3;
             var position01 = 3;
-            uint bitCome02 = 3;
+            uint bitComb02 = 3;
             var position02 = 24;
 
-            bitCome01 = (number >> position01) & bitCome01;
-            bitCome02 = (number >> position02) & bitCome02;
+            // FIXME: use number based positioning, instead of the quick one <= This causes a BUG
+            bitComb01 = (number >> position01) & bitComb01;
+            bitComb02 = (number >> position02) & bitComb02;
 
             // a^=b exchange of the bitcomes
-            uint exchangeMask = bitCome01 ^ bitCome02;
-            bitCome01 ^= exchangeMask;
-            bitCome02 ^= exchangeMask;
+            uint exchangeMask = bitComb01 ^ bitComb02;
+            bitComb01 ^= exchangeMask;
+            bitComb02 ^= exchangeMask;
 
-            // repositioning and coming
-            number ^= bitCome01 << position01;
-            number ^= bitCome02 << position02;
+            // repositioning and coming FIXME: needs matching bits for (1)
+            number ^= bitComb01 << position01;
+            number ^= bitComb02 << position02;
 
+            // TODO: Compromising alternative solution is bit per bit check at positions 3,4,5 vs 24,25,26 and apply the bit(1) match and opposites swap
             return number;
         }
 
