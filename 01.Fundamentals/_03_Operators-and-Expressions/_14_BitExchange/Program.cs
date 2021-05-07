@@ -18,8 +18,9 @@ namespace _14_BitExchange
             var modifiedNumber = ExchangeBits(number, new uint[2] { 3, 24 }, 3);
             Console.Write($"Expected Number: ");
             var isValidInputExpectedNumber = uint.TryParse(Console.ReadLine(), out uint expected_number);
-
+#if DEBUG
             VisualAid_Stages(number, modifiedNumber, expected_number);
+#endif
             // RESULT:
             Console.WriteLine($"{modifiedNumber}");
         }
@@ -46,7 +47,7 @@ namespace _14_BitExchange
             number ^= 1u << position01;
             return number;
         }
-
+#if DEBUG
         static void VisualAid_Stages(uint starting_number, uint modified_number, uint expected_number)
         {
             Console.WriteLine($"____RESULT____");
@@ -57,7 +58,7 @@ namespace _14_BitExchange
 
             var modified_number_bitwise = Convert.ToString(modified_number, 2).PadLeft(64, '0');
             var modified_number_bitwise_formatted = Regex.Replace(modified_number_bitwise, ".{8}(?!$)", "$0 ");
-            Console.WriteLine($"{modified_number_bitwise_formatted} \t Changed Number({modified_number})");
+            Console.WriteLine($"{modified_number_bitwise_formatted} \t Changed Number ({modified_number})");
 
             var expected_number_bitwise = Convert.ToString(expected_number, 2).PadLeft(64, '0');
             var expected_number_bitwise_formatted = Regex.Replace(expected_number_bitwise, ".{8}(?!$)", "$0 ");
@@ -69,5 +70,6 @@ namespace _14_BitExchange
             var bitcomb_bitwise_formatted = Regex.Replace(bitcomb_bitwise, ".{8}(?!$)", "$0 ");
             Console.WriteLine($"{bitcomb_bitwise_formatted} \t {unitName}({unit})");
         }
+#endif
     }
 }
