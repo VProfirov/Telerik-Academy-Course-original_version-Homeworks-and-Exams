@@ -7,7 +7,7 @@ namespace _15_Age
     {
         static void Main(string[] args)
         {
-            var userinput_DateOfBirth = "11.30.2000";
+            var userinput_DateOfBirth = "01/01/1995";
             var userDateOfBirth = DateTime.Parse(userinput_DateOfBirth);
             var today = DateTime.Now;
            

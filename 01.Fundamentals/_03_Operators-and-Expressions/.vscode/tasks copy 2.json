@@ -7,9 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/_15_Age/_15_Age.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}/_03_Operators-and-Expressions.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -19,9 +17,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/_15_Age/_15_Age.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}/_03_Operators-and-Expressions.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -32,9 +28,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/_15_Age/_15_Age.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}/_03_Operators-and-Expressions.sln"
             ],
             "problemMatcher": "$msCompile"
         }

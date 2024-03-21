@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace tst_dotnet5._0
+namespace _01_0_OddOrEven
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.WriteLine("HIIIIIIIIIII");
+            Console.WriteLine("line 3");
         }
     }
 }

@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>tst_dotnet5._0</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
