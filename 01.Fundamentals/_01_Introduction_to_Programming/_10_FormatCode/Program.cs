@@ -7,7 +7,8 @@ namespace _10_FormatCode
     {
         private static void Main(string[] args)
         {
-            var str = File.ReadAllText("../../../HorribleCode_Formatted.txt");
+            // var str = File.ReadAllText("../../../HorribleCode_Formatted.txt");
+            var str = File.ReadAllText("./HorribleCode_Formatted.txt");
             Console.WriteLine(str);
         }
     }
